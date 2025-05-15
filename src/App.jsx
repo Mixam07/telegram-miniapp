@@ -21,6 +21,7 @@ const App = () => {
     alert("Скопійовано: " + userId);
   };
 
+  /*
   try {
     window.Telegram.WebApp.ready();
     setRaw(window.Telegram.WebApp.initData || 'No initData')
@@ -45,6 +46,7 @@ const App = () => {
     console.error('Script error:', err);
     setLog('Script error: ' + err.message);
   }
+    */
 
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
