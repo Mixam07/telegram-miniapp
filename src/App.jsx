@@ -61,22 +61,22 @@ const App = () => {
       <pre id="raw">{raw}</pre>
       <h3>Server response:</h3>
       <pre id="log">{log}</pre>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/alarmukraine">силка</a>
-      <a href="https://t.me/BotFather">силка на бот</a>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/alarmukraine">силка</a><br/>
+      <a href="https://t.me/BotFather">силка на бот</a><br/>
     </div>
   );
 };
