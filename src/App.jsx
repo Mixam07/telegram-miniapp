@@ -1,3 +1,55 @@
+import React, { useEffect, useState } from 'react';
+
+const TelegramAuth = () => {
+  const [initData, setInitData] = useState<string>('Loading...');
+  const [serverResponse, setServerResponse] = useState<string>('Waiting...');
+
+  useEffect(() => {
+    try {
+      window.Telegram.WebApp.ready();
+
+      const data = window.Telegram.WebApp.initData || 'No initData';
+      setInitData(data);
+
+      fetch('http://localhost:3000/v1/auth/telegram', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          gameId: 'fabda0e7-356f-4cfd-91ec-b992d9beaa7e',
+          initData: data,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log('Server response:', data);
+          setServerResponse(JSON.stringify(data, null, 2));
+        })
+        .catch((err) => {
+          console.error('Fetch error:', err);
+          setServerResponse('Fetch error: ' + err.message);
+        });
+    } catch (err: any) {
+      console.error('Script error:', err);
+      setServerResponse('Script error: ' + err.message);
+    }
+  }, []);
+
+  return (
+    <div>
+      <h1>Telegram SDK Auth</h1>
+      <h3>initDataRaw:</h3>
+      <pre>{initData}</pre>
+      <h3>Server response:</h3>
+      <pre>{serverResponse}</pre>
+    </div>
+  );
+};
+
+export default TelegramAuth;
+
+/*
 import { useEffect, useState } from "react";
 
 const App = () => {
@@ -20,7 +72,7 @@ const App = () => {
     navigator.clipboard.writeText(userId);
     alert("Скопійовано: " + userId);
   };
-
+*/
   /*
   try {
     window.Telegram.WebApp.ready();
@@ -47,7 +99,7 @@ const App = () => {
     setLog('Script error: ' + err.message);
   }
     */
-
+/*
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
       <h2>Telegram Mini App</h2>
@@ -82,3 +134,4 @@ const App = () => {
 };
 
 export default App;
+*/
