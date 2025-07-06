@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 const App = () => {
+  const [initData, setInitData] = useState("");
   const [userId, setUserId] = useState("");
   const [log, setLog] = useState("Waiting...");
   const [raw, setRaw] = useState("Loading...");
@@ -26,12 +27,12 @@ const App = () => {
     window.Telegram.WebApp.ready();
     setRaw(window.Telegram.WebApp.initData || 'No initData')
 
-    fetch('http://localhost:3000/v1/auth/telegram', {
+    fetch('http://209.38.195.221:3000/v1/auth/telegram', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: { gameId: 'fabda0e7-356f-4cfd-91ec-b992d9beaa7e', initData: window.Telegram.WebApp.initData }
+      body: { gameId: '529632d3-a7e6-4522-8db7-492168b44270', initData: window.Telegram.WebApp.initData }
     })
     .then(res => res.json())
     .then(data => {
@@ -50,35 +51,11 @@ const App = () => {
 
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h2>Telegram Mini App</h2>
-      <p>Ваш Telegram ID: <strong>{userId}</strong></p>
-      <button onClick={copyToClipboard}>📋 Копіювати</button><br />
-      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
-        🌐 Перейти на сайт
-      </a>
-      <h1>Telegram SDK Auth</h1>
-      <h3>initDataRaw:</h3>
-      <pre id="raw">{raw}</pre>
-      <h3>Server response:</h3>
-      <pre id="log">{log}</pre>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/alarmukraine">силка</a><br/>
-      <a href="https://t.me/BotFather">силка на бот</a><br/>
+      {window.Telegram.WebApp.initData}
     </div>
   );
 };
 
 export default App;
+
+//eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwZDZhZjc5MC1jZDNhLTQ5ZTMtOGEzZC1mZjlkZGI4M2IxOTkiLCJpYXQiOjE3NDg0MjA5MzUsImV4cCI6MTc0ODQyMTgzNX0.0wdzcKFowyinjSci38p8ce2i0tgDEfASbBFzKGvCfsk2yYR3L4d2SR_lrIoHiwK0kuOzMtnnQ917hwRtr_ZdKetp69uom7bD567ra79wgIq_H0XEE8UxMN75OBz-TuGKavW0xe7UWXmD4BbG_O55pyhP0g5Y9UGp6xfmBWJZ5KOg-fKo_ufg5H4yaNxXOYM0Sw9ceJdLXvREUoStpbw7OEEIdZsISrqPDC3EgT8njf-H3nu6qzExBVT0PSWbmu64LgozJTDKUUvbLX4A2vlMJVloVAHxdcYzVD-ZzQ2apy5RhYOOdjwxwpszPgbajzgneNMXHhgDsjPMxleQ28MIrA
